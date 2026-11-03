@@ -1,0 +1,25 @@
+Project: Samjhao
+Category: Learning & education
+Author: Baishnvi Goswami (GitHub: @baishnvi)
+
+What it is
+Samjhao ("explain it to me") is an AI study companion for Indian students. It has
+three modes built on one BharatCode model harness:
+  1. Tutor      - Socratic chat that explains in Hinglish, Hindi or English and
+                  checks understanding with a question after every explanation.
+  2. Quiz       - generates exam-style MCQs on any topic, grades them in the
+                  browser and explains every answer.
+  3. Flashcards - generates revision cards (or saves cards from missed quiz
+                  questions) and schedules them with a simple spaced-repetition box system.
+
+How BharatCode is used
+All model calls go through server/bharatcode.js -> POST {BASE_URL}/chat/completions
+using the BharatCode API (default model: qwen-3.8-27b). The API key stays on the
+server and is never sent to the browser.
+
+Run it
+  npm install
+  cp .env.example .env   # add BHARATCODE_API_KEY
+  npm start              # http://localhost:3000
+
+License: MIT

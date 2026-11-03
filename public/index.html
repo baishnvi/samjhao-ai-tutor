@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samjhao - AI study companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Bitter:wght@600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="cover">
+  <h1>Samjhao <span lang="hi">समझाओ</span></h1>
+  <p>Ask a doubt. Get it explained your way. Then prove you got it.</p>
+  <div class="settings" role="group" aria-label="Study settings">
+    <label>Subject <input id="subject" value="Physics" maxlength="60"></label>
+    <label>Level
+      <select id="level"><option>Class 6-8</option><option>Class 9-10</option><option selected>Class 11-12</option><option>College</option></select>
+    </label>
+    <label>Language
+      <select id="language"><option value="hinglish">Hinglish</option><option value="english">English</option><option value="hindi">हिन्दी</option></select>
+    </label>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button role="tab" data-tab="tutor" aria-selected="true">Ask tutor</button>
+  <button role="tab" data-tab="quiz" aria-selected="false">Take a quiz</button>
+  <button role="tab" data-tab="cards" aria-selected="false">Revise cards <b id="dueBadge" hidden></b></button>
+</nav>
+
+<main class="page">
+  <section id="tutor" class="panel">
+    <div id="chat" class="chat" aria-live="polite">
+      <p class="empty">Type a doubt below, for example "Why does a satellite not fall down?"</p>
+    </div>
+    <form id="chatForm" class="row">
+      <input id="chatInput" placeholder="Type your doubt" maxlength="2000" autocomplete="off" required>
+      <button class="primary">Ask</button>
+      <button type="button" id="chatClear" class="ghost">New chat</button>
+    </form>
+  </section>
+
+  <section id="quiz" class="panel" hidden>
+    <form id="quizForm" class="row">
+      <input id="quizTopic" placeholder="Topic, e.g. Newton's laws of motion" maxlength="120" required>
+      <select id="quizCount" aria-label="Number of questions"><option>5</option><option>8</option><option>10</option></select>
+      <button class="primary">Make quiz</button>
+    </form>
+    <div id="quizBody"><p class="empty">Pick a topic and get exam-style questions with explanations.</p></div>
+  </section>
+
+  <section id="cards" class="panel" hidden>
+    <form id="cardForm" class="row">
+      <input id="cardTopic" placeholder="Topic to revise, e.g. Photosynthesis" maxlength="120" required>
+      <button class="primary">Make cards</button>
+    </form>
+    <div id="cardBody"></div>
+  </section>
+
+  <p id="status" class="status" role="status"></p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
