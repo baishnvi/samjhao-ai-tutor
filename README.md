@@ -33,3 +33,7 @@ BharatCode.txt         Hackathon submission file
 Photo-of-a-textbook-page questions, WhatsApp bot front end, teacher dashboards.
 
 MIT licensed. Author: Baishnvi Goswami.
+
+## Live Demo
+<img width="1366" height="768" alt="Screenshot (494)" src="https://github.com/user-attachments/assets/9bc8e9c0-8eb7-412a-be8e-456a11955cc0" />
+
